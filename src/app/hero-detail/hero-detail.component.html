@@ -1,0 +1,13 @@
+<form *ngIf="hero" class="hero-form">
+  <div>
+    <h2>{{hero.name}} Detail</h2>
+    <mat-form-field class="hero-full-width" appearance="fill">
+      <mat-label>Hero ID: {{hero.id}} </mat-label>
+      <mat-label>Hero Name:</mat-label>
+      <input matInput name="heroname" #heroname="ngModel" type="text" placeholder="Hero"  [(ngModel)]="hero.name" required >
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-button  (click)="goBack()">Back <mat-icon>arrow_back</mat-icon></button>
+  <button mat-button  (click)="save()">Save <mat-icon>save</mat-icon></button>
+</form>

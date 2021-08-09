@@ -1,0 +1,17 @@
+<h2>My Heroes</h2>
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+  <button mat-raised-button (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+</div>
+<ul class="list-heroes">
+  <li *ngFor='let hero of heroes' class='hero-item'>
+    <a mat-button routerLink="detail/{{hero.id}}" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <mat-icon>favorite</mat-icon><span class="badge"></span>{{hero.id}}<span class="badge"></span> {{hero.name}}
+    </a>
+    <button mat-raised-button class="delete-hero" title="delete hero"
+    (click)="delete(hero)"><mat-icon>delete</mat-icon></button>
+  </li>
+</ul>

@@ -1,0 +1,32 @@
+.hero-item {
+  list-style-type: none;
+  display: flex;
+  .mat-button {
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    background-color: pink;
+    margin: 5px;
+    padding: 0px 2px;
+    text-align: left;
+    .badge {
+      margin-right: 0.5em;
+    }
+  }
+  .mat-raised-button {
+    width: 100%;
+    min-width: 30px;
+    max-width: 50px;
+    background-color: pink;
+    margin: 5px;
+    padding: 0px 2px;
+  }
+  .selected {
+    background-color: plum;
+  }
+}
+
+.mat-raised-button {
+  display: block;
+  margin: 10px;
+}

@@ -1,0 +1,13 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.button-row {
+  display: table-cell flex;
+  width: 490px;
+}
+.mat-raised-button {
+  margin-right: 10px;
+}
+.mat-raised-button a:link {
+  text-decoration: none;
+}

@@ -1,0 +1,14 @@
+.dashboard {
+  float: auto;
+  width: 100%;
+  h1 {
+    text-align: center;
+  }
+  .dashboard-button {
+    display: flex;
+    justify-content: center;
+  }
+  .mat-raised-button {
+    margin: 0px 20px;
+  }
+}

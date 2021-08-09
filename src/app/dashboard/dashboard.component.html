@@ -1,0 +1,10 @@
+<div class="dashboard">
+  <h1>Top Heroes</h1>
+  <div class="dashboard-button">
+      <a mat-raised-button color="accent" *ngFor="let hero of heroes" routerLink="/heroes/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+  </div>
+</div>
+<app-hero-search></app-hero-search>
+

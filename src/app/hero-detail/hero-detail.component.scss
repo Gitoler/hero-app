@@ -1,0 +1,9 @@
+.hero-form {
+  display: block flex;
+  .hero-full-with {
+    min-width: 150px;
+    max-width: 300px;
+    width: 100%;
+    display: inline-block;
+  }
+}
