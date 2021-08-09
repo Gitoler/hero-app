@@ -1,7 +1,9 @@
 <h2>My Heroes</h2>
-<div>
+<div class ="new-hero">
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <mat-form-field>
+    <input matInput id="new-hero" #heroName />
+  </mat-form-field>
   <button mat-raised-button (click)="add(heroName.value); heroName.value=''">
     Add hero
   </button>

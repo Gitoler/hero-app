@@ -24,6 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     DashboardComponent,
     HeroDetailComponent,
     HeroSearchComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatAutocompleteModule,
 
     //Web api server
     HttpClientModule,
@@ -60,6 +62,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
+    MatSelectModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
