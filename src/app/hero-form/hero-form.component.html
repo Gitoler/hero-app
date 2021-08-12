@@ -1,34 +1,40 @@
 <div class="container">
-  <div [hidden]="submitted">
-    <h1>Hero Form</h1>
-      <form (ngSubmit)="onSubmit()" #heroForm="ngForm" class ="hero-form">
-        <div class="form-row">
-          <mat-label>Name</mat-label>
-          <mat-form-field class="input-item">
-            <input matInput>
-            <mat-error>This field is required</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="form-row">
-          <mat-label>Alter Ego</mat-label>
-          <mat-form-field>
-            <mat-select matNativeControl [disabled]="disableSelect.value">
-              <mat-option *ngFor="let pow of powers" [value]="pow">{{pow}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="form-row">
-          <mat-label>Hero power</mat-label>
-          <mat-form-field class="input-item">
-            <input matInput>
-          </mat-form-field>
-        </div>
-        <button type="submit" mat-button [disabled]="!heroForm.form.valid">Submit</button>
-        <button type="button" mat-button (click)="newHero(); heroForm.reset()">New Hero</button>
-      </form>
-  </div>
-
-  <div [hidden]="!submitted">
+<mat-card class ="hero-card">
+  <mat-card-header class="hero-card-header">
+    <mat-card-title class="hero-card-title">
+      Form Super Hero
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="../../assets/images/hero.jpg" alt="Photos of Hero">
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit(heroName.value, heroPower.value, heroEgo.value)" class = "hero-form">
+      <mat-form-field class = "hero_form__row">
+        <mat-label>Name</mat-label>
+        <input matInput class = "hero-form__input" #heroName>
+      </mat-form-field>
+      <mat-form-field class = "hero_form__row">
+        <mat-label>Alter Egco</mat-label>
+        <mat-select #heroPower>
+          <mat-option  *ngFor="let power of powers" [value]="power" >
+            {{power}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class = "hero_form__row">
+        <mat-label>Power</mat-label>
+        <input matInput class = "hero-form__input" #heroEgo>
+      </mat-form-field>
+      <mat-card-actions class = "hero-event">
+        <button type="submit" mat-raised-button>
+          Submit
+        </button>
+        <a mat-raised-button>Back
+        </a>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
+  <!-- <div [hidden]="!submitted">
     <h2>You submitted the following:</h2>
     <div class="row">
       <div class="col-xs-3">Name</div>
@@ -44,5 +50,5 @@
     </div>
     <br>
     <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
+  </div> -->
 </div>

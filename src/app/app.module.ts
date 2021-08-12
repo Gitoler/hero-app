@@ -26,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatMenuModule,
     MatSelectModule,
     MatAutocompleteModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

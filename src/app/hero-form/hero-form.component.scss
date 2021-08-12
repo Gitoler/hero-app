@@ -1,18 +1,18 @@
-.hero-form {
+.hero-card {
+  max-width: 400px;
   min-width: 300px;
-  max-width: 500px;
-  width: 100%;
-  display: center;
-  .hero-row {
-    display: inline-flex;
-    justify-content: space-around;
-    .input-item {
-      width: 100%;
+  margin: 10px;
+  text-align: center;
+  .hero-card-header {
+    flex-direction: column;
+  }
+  .hero-form {
+    width: 100%;
+    .hero_form__row {
       display: block;
     }
-    .mat-label {
-      display: inline-block;
-      margin-right: 20px;
-    }
+  }
+  .hero-event {
+    text-align: right;
   }
 }
