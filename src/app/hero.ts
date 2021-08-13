@@ -1,8 +1,8 @@
 export class Hero {
   constructor(
-    public id: number,
-    public name: string,
-    public power: string,
-    public alterEgo: string
+    public HeroId: number,
+    public HeroName: string,
+    public HeroPower: string,
+    public HeroAlterEgo: string
   ) {}
 }

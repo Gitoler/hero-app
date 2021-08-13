@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from './hero';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -12,7 +12,7 @@ export class HeroService {
     private messageService: MessageService,
     private http: HttpClient
   ) {}
-  private heroesUrl = 'api/heroes'; // URL to web api
+  private heroesUrl = 'http://localhost:49146/api/hero'; // URL to web api
   private log(message: string): void {
     this.messageService.add(`HeroService: ${message}`);
   }
@@ -28,7 +28,8 @@ export class HeroService {
   }
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl).pipe(
-      tap((_) => this.log('fetched heroes')),
+      // tap((_) => this.log('fetched heroes')),
+      tap((_) => console.log(_)),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
   }
@@ -41,13 +42,13 @@ export class HeroService {
   }
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((_) => this.log(`updated hero id=${hero.id}`)),
+      tap((_) => this.log(`updated hero id=${hero.HeroId}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.HeroId}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }

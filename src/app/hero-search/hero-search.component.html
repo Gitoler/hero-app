@@ -21,9 +21,9 @@
            [formControl]="myControl"
            [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let hero of heroes$ | async" [value]="hero.name">
-        <a mat-button routerLink="/heroes/detail/{{hero.id}}">
-          {{hero.name}}
+      <mat-option *ngFor="let hero of heroes$ | async" [value]="hero.HeroName">
+        <a mat-button routerLink="/heroes/detail/{{hero.HeroId}}">
+          {{hero.HeroName}}
         </a>
       </mat-option>
     </mat-autocomplete>

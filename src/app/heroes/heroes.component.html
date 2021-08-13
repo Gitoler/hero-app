@@ -10,8 +10,8 @@
 </div>
 <ul class="list-heroes">
   <li *ngFor='let hero of heroes' class='hero-item'>
-    <a mat-button routerLink="detail/{{hero.id}}" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-      <mat-icon>favorite</mat-icon><span class="badge"></span>{{hero.id}}<span class="badge"></span> {{hero.name}}
+    <a mat-button routerLink="detail/{{hero.HeroId}}" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <mat-icon>favorite</mat-icon><span class="badge"></span>{{hero.HeroId}}<span class="badge"></span> {{hero.HeroName}}
     </a>
     <button mat-raised-button class="delete-hero" title="delete hero"
     (click)="delete(hero)"><mat-icon>delete</mat-icon></button>

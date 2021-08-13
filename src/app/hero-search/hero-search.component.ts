@@ -10,7 +10,7 @@ import {
   map,
 } from 'rxjs/operators';
 
-import { Hero } from '../../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -32,7 +32,7 @@ export class HeroSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('hello');
+    // console.log('hello');
     this.heroes$ = this.myControl.valueChanges.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),

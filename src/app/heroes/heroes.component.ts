@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Hero } from '../../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-heroes',
@@ -17,23 +17,24 @@ export class HeroesComponent implements OnInit {
 
   selectedHero?: Hero;
   heroes: Hero[] = [];
+  test: any[] = [];
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
-    this.messageService.add(`Selected hero: ${hero.name}`);
+    this.messageService.add(`Selected hero: ${hero.HeroName}`);
   }
-  add(name: string): void {
-    name = name.trim();
-    if (!name) {
+  add(HeroName: string): void {
+    HeroName = HeroName.trim();
+    if (!HeroName) {
       return;
     }
     this.heroService
-      .addHero({ name } as Hero)
+      .addHero({ HeroName } as Hero)
       .subscribe((_hero) => this.heroes.push(_hero));
   }
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter((h) => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe();
+    this.heroService.deleteHero(hero.HeroId).subscribe();
   }
 
   ngOnInit(): void {
@@ -42,6 +43,8 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService
       .getHeroes()
-      .subscribe((_heroes) => (this.heroes = _heroes));
+      .subscribe(
+        (_heroes) => ((this.heroes = _heroes), console.log(this.heroes))
+      );
   }
 }
